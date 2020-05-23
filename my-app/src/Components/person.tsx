@@ -1,20 +1,22 @@
 
 import React from 'react';
 
-interface IPerson {
+export interface IPerson {
     name: string;
-    age : number;
+    yearsBornAgo : number;
+}
 
-  }
-
-function Person({name, age}: IPerson) {
+function Person({name, yearsBornAgo}: IPerson) {
 
   return (
     <>
         <p>Hello my name is {name}</p>
-        <p>I am {age} years old</p>
+        <p>I was born {yearsBornAgo} years ago</p>
     </>
   );
 }
 
-export default Person;
+export { 
+  Person 
+}
+

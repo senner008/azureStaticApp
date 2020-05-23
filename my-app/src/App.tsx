@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import './App.css';
-import Person from './Components/person';
+import { Person, IPerson } from './Components/person';
 
 function App() {
+
+  const [personState, setPersonState] : [IPerson, Dispatch<SetStateAction<IPerson>>] = useState({} as IPerson)
+
+  useEffect(() => {
+    (async () => {
+      const person : any = await fetch("/api/HttpTrigger").then(res => res.json());
+      setPersonState(person);
+    })();
+  }, [])
+
   return (
     <div className="App">
-      <Person name={'Azure static app'} age={0}/>
+      {
+        personState !== null && 
+          <Person name={personState.name} yearsBornAgo={personState.yearsBornAgo}/>
+      }
     </div>
   );
 }
