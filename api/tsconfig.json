@@ -3,9 +3,12 @@
     "module": "commonjs",
     "target": "es6",
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "../",
     "esModuleInterop": true,
     "sourceMap": true,
-    "strict": false
+    "strict": false,
+    "jsx": "react",
+    "baseUrl": "../",
+    
   }
 }

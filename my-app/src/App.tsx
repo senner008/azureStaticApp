@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const person : any = await fetch("/api/HttpTrigger").then(res => res.json());
+      const person : IPerson = await fetch("/api/HttpTrigger").then(res => res.json());
       setPersonState(person);
     })();
   }, [])
