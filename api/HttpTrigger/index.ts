@@ -12,7 +12,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 
     const user : IUser = {
         name : "Batman",
-        yearsBornAgo : Math.round(bornYearsAgo("1980-10-10"))
+        yearsBornAgo : Math.round(bornYearsAgo("1963-02-29"))
     }
 
     context.res = {
