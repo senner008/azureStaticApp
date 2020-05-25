@@ -8,6 +8,7 @@
     "prestart": "npm run build && func extensions install",
     "start:host": "func start",
     "start": "npm-run-all --parallel start:host watch",
+    "dev-dbsetup" : "ts-node setup-table.ts",
     "test": "jest ./__TESTS__/ --detectOpenHandles --forceExit --verbose --watch",
     "test-remote": "jest ./__TESTS__/ --detectOpenHandles --forceExit"
   },

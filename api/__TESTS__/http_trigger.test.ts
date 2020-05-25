@@ -15,6 +15,5 @@ describe(
             await httpTrigger(context, {});
 
             expect(JSON.parse(context.res.body)[0].name).toEqual('Batman');
-            expect(JSON.parse(context.res.body)[0].yearsBornAgo).toEqual(57);
         })
     });

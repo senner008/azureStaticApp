@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-function bornYearsAgo(date : string) : number {
+function bornYearsAgo(date : Date) : number {
     return moment().diff(date, 'years',true);
 }
 

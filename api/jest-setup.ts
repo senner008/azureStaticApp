@@ -3,7 +3,7 @@
 // TODO : setup addition ts-jest settings
 // @ts-ignore
 jest.setTimeout(14000); // in milliseconds
-const { setupTable } = require("./src/SQL/db_setup");
+import { setupTable } from "./src/SQL/db_setup";
 
 
 // @ts-ignore
