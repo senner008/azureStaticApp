@@ -1,10 +1,15 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import bornYearsAgo from "../src/dateHandler";
-import { IPerson } from "../../my-app/src/Components/person";
+
 import { STORED_PROCEDURE_GET_USERS, IUser } from "../src/SQL/PROCEDURES/PROCEDURE_GET_USERS";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     context.log('HTTP trigger function processed a request.');
+
+    interface IPerson {
+        name: string;
+        yearsBornAgo : number;
+    }
 
     try {
         const users: IUser[] = await STORED_PROCEDURE_GET_USERS();
