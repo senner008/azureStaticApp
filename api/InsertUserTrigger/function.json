@@ -16,5 +16,5 @@
       "name": "$return"
     }
   ],
-  "scriptFile": "../dist/api/InsertUserTrigger/index.js"
+  "scriptFile": "../dist/InsertUserTrigger/index.js"
 }
