@@ -3,9 +3,9 @@
     "module": "commonjs",
     "target": "es6",
     "outDir": "dist",
-    "rootDir": ".",
     "esModuleInterop": true,
     "sourceMap": true,
     "strict": false
-  }
+  },
+  "exclude": ["node_modules", "__TESTS__"]
 }
