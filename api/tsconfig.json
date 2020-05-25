@@ -10,5 +10,6 @@
     "jsx": "react",
     "baseUrl": "../",
     
-  }
+  },
+  "exclude": ["node_modules", "__TESTS__"]
 }

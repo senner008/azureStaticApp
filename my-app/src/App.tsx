@@ -4,11 +4,11 @@ import { Person, IPerson } from './Components/person';
 
 function App() {
 
-  const [personState, setPersonState] : [IPerson, Dispatch<SetStateAction<IPerson>>] = useState({} as IPerson)
+  const [personState, setPersonState] : [IPerson[], Dispatch<SetStateAction<IPerson[]>>] = useState([] as IPerson[])
 
   useEffect(() => {
     (async () => {
-      const person : IPerson = await fetch("/api/HttpTrigger").then(res => res.json());
+      const person : IPerson[] = await fetch("/api/HttpTrigger").then(res => res.json());
       setPersonState(person);
     })();
   }, [])
@@ -16,8 +16,11 @@ function App() {
   return (
     <div className="App">
       {
-        personState !== null && 
-          <Person name={personState.name} yearsBornAgo={personState.yearsBornAgo}/>
+        personState.length > 0 && 
+        personState.map((person, index) => {
+          return <Person key={index} name={person.name} yearsBornAgo={person.yearsBornAgo}/>
+        })
+        
       }
     </div>
   );
